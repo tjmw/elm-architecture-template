@@ -3,17 +3,8 @@ module Main exposing (..)
 import Html exposing (..)
 
 
-main : Program Never Model Msg
-main =
-    Html.program
-        { init = init
-        , view = view
-        , update = update
-        , subscriptions = subscriptions
-        }
-
-
 -- MODEL
+
 
 type alias Model = { ... }
 
@@ -31,6 +22,7 @@ init =
 
 -- UPDATE
 
+
 type Msg = Reset | ...
 
 update : Msg -> Model -> ( Model, Cmd Msg )
@@ -42,6 +34,7 @@ update msg model =
 
 -- VIEW
 
+
 view : Model -> Html Msg
 view model =
   ...
@@ -49,8 +42,22 @@ view model =
 
 -- SUBSCRIPTIONS
 
+
 subscriptions : Model -> Sub Msg
 subscriptions model =
     Sub.batch
         [
         ]
+
+
+-- MAIN
+
+
+main : Program Never Model Msg
+main =
+    Html.program
+        { init = init
+        , view = view
+        , update = update
+        , subscriptions = subscriptions
+        }
